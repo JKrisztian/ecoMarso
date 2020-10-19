@@ -9,18 +9,13 @@ class Product extends Controller
 {
     public function index()
     {
-    $products = DB::table('products')->get();
+    $products = DB::table('products')->paginate(6);
     return view('welcome',['products' => $products]);
     }
 
-    // public function show($identifier)
-    // {
-    //     $product = Product::where('identifier',$identifier)->first();
-    //     if (!is_null($product)){
-    //         return view('show',compact('product'));
-    //     }else{
-    //         session()->flash('errors','sorry');
-    //         return redirect()->route('welcome');
-    //     }
-    // }
+    public function show($identifier)
+    {
+        $product = DB::table('products')->where('identifier',$identifier)->first();
+        return view('products/{identifier}',['product' => $product]);
+    }
 }

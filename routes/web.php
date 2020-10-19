@@ -19,5 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/',[Product::class, 'index']);
+Route::get('products/{identifier}',[Product::class, 'show']);
 Route::get('/products',[Product::class, 'index']);
 

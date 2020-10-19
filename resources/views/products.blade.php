@@ -68,7 +68,7 @@
           <div class="col-lg-4 col-md-6 mb-4">          
             <div class="card h-100">
               
-              <a href=""><img class="card-img-top" src="{{ $data->image_url }}" alt=""></a>
+              <a href="products/{{ $data->identifier }}"><img class="card-img-top" src="{{ $data->image_url }}" alt=""></a>
               
               <div class="card-body">
                 <h4 class="card-title">
@@ -88,11 +88,11 @@
           </div>
           
           @endforeach
-          <div></div>
+          <div>{{ $items->render("pagination::bootstrap-4") }}</div>
         </div>
         <!-- /.row -->
-        
         {{ $products->render("pagination::bootstrap-4") }}
+        
       </div>
       <!-- /.col-lg-9 -->
       

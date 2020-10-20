@@ -50,12 +50,9 @@
 
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
-          <a href="/?category_id=KAM" >Category 1</a>
-          <a href="/?category_id=MIT" class="list-group-item">Category 2</a>
-          <a href="/?category_id=VOL" class="list-group-item">Category 3</a>
-          <a href="/?category_id='FIR'" class="list-group-item">Category 3</a>
-          <a href="/?category_id='GOO'" class="list-group-item">Category 3</a>
-          <a href="/?category_id='ROS'" class="list-group-item">Category 3</a>
+          <a href="#" class="list-group-item">Category 1</a>
+          <a href="#" class="list-group-item">Category 2</a>
+          <a href="#" class="list-group-item">Category 3</a>
         </div>
 
       </div>
@@ -71,7 +68,7 @@
           <div class="col-lg-4 col-md-6 mb-4">          
             <div class="card h-100">
               
-              <a href=""><img class="card-img-top" src="{{ $data->image_url }}" alt=""></a>
+              <a href="products/{{ $data->identifier }}"><img class="card-img-top" src="{{ $data->image_url }}" alt=""></a>
               
               <div class="card-body">
                 <h4 class="card-title">
@@ -91,11 +88,11 @@
           </div>
           
           @endforeach
-          <div></div>
+          <div>{{ $products->render("pagination::bootstrap-4") }}</div>
         </div>
         <!-- /.row -->
+       
         
-        {{ $products->render("pagination::bootstrap-4") }}
       </div>
       <!-- /.col-lg-9 -->
       

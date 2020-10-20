@@ -57,40 +57,26 @@
       <!-- /.col-lg-3 -->
       
       <div class="col-lg-9">
-
+      @foreach($products as $product)
         <div class="card mt-4">
-        @foreach($products as $product)
+        
           <img class="col-lg-6 card-img-top img-fluid" src="{{ $product->image_url }}" alt="">
           <div class="card-body">
             <h3 class="card-title">{{ $product->name }}</h3>
             <h4>{{ $product->net_price }} Ft</h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
-          </div>
+            <form action="/cart" method="POST">
+                {{ csrf_field() }}
+            <input type="hidden" name="identifier" value=" {{ $product->identifier }} ">
+            <input type="hidden" name="name" value=" {{ $product->name }} ">
+            <input type="hidden" name="net_price" value=" {{ $product->net_price }} ">
+            <button class="btn btn-primary">Kosárba helyezem</button>
+        </form>
         @endforeach
+          </div>
+        
         </div>
         
-        <!-- /.card -->
-
-        <div class="card card-outline-secondary my-4">
-          <div class="card-header">
-            Product Reviews
-          </div>
-          <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <a href="#" class="btn btn-success">Leave a Review</a>
-          </div>
-        </div>
-        <!-- /.card -->
       
       </div>
       <!-- /.col-lg-9 -->

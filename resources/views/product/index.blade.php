@@ -13,17 +13,19 @@
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
-          <form action="/search" method="POST" role="search">
-              {{ csrf_field() }}
-              <div class="input-group">
-                  <input type="text" class="form-control" name="q"
-                      placeholder="Search"> <span class="input-group-btn">
-                      <button type="submit" class="btn btn-default">
-                          <span class="glyphicon glyphicon-search"></span>
-                      </button>
-                  </span>
-              </div>
-          </form>
+
+          <form action="{{URL('/searchResult')}}" method="GET" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" name="keres"
+                    placeholder="Keresés"> <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
         </div>
 
       </div>
@@ -52,9 +54,7 @@
                 </h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>            
           </div>
           

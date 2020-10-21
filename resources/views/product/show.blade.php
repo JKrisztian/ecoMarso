@@ -14,6 +14,17 @@
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
         </div>
+        <form action="{{URL('/searchResult')}}" method="GET" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" name="keres"
+                    placeholder="Keresés"> <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+          </form>
       </div>
       <!-- /.col-lg-3 -->
       
@@ -47,4 +58,4 @@
 
   </div>
   <!-- /.container -->
-  @endsection
+  

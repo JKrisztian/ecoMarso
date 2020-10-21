@@ -23,4 +23,11 @@ class Product extends Controller
         $products = DB::table('products')->where('identifier',$identifier)->get();
         return view('product.show')->with('products', $products);
     }
+
+    public function search_p()
+    {
+        $key = \Request::get('keres');
+        $products = DB::table('products')->where('name', 'LIKE' ,'%'. $key .'%')->orderBy('identifier')->paginate(6);
+        return view('product.searchResult')->with('products', $products);
+    }
 }

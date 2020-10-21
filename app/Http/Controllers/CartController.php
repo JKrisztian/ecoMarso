@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class CartController extends Controller
 {
@@ -11,9 +12,9 @@ class CartController extends Controller
         return view('cart.index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        \Cart::add($request->identifier, $request->name, 1, $request-net_price)->associate('App\Product');
+        \Cart::add($request->identifier, $request->name, $request->net_price, 1);
         return view('cart.index')->with('message','Kosárba rakva!');
     }
 }

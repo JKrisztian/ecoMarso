@@ -65,16 +65,21 @@
                 </h4>
                 <h5>{{ $product->net_price }}Ft</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
+              </div>   
+                        
+            </div>   
+            <form action="/cart" method="POST">
+                {{ csrf_field() }}
+              <input type="hidden" name="identifier" value=" {{ $product->identifier }} ">
+              <input type="hidden" name="name" value=" {{ $product->name }} ">
+              <input type="hidden" name="net_price" value=" {{ $product->net_price }} ">
+              <button class="btn btn-primary">Kosárba helyezem</button>          
           </div>
         @endforeach
+        
         </div>
         <!-- /.row -->
-
+        
       </div>
       <!-- /.col-lg-9 -->
 

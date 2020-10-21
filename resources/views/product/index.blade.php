@@ -39,6 +39,7 @@
         </ul>
       </div>
     </div>
+    
   </nav>
 
   <!-- Page Content -->
@@ -53,6 +54,17 @@
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
+          <form action="/search" method="POST" role="search">
+              {{ csrf_field() }}
+              <div class="input-group">
+                  <input type="text" class="form-control" name="q"
+                      placeholder="Search"> <span class="input-group-btn">
+                      <button type="submit" class="btn btn-default">
+                          <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                  </span>
+              </div>
+          </form>
         </div>
 
       </div>

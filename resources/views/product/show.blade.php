@@ -71,6 +71,7 @@
             <input type="hidden" name="name" value=" {{ $product->name }} ">
             <input type="hidden" name="net_price" value=" {{ $product->net_price }} ">
             <button class="btn btn-primary">Kosárba helyezem</button>
+            <a href="" class="btn btn-primary">Add hozzá</a>
         </form>
         @endforeach
           </div>

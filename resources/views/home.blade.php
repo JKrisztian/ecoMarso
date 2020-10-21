@@ -11,9 +11,7 @@
 
         <h2 class="my-4">Gumi webáruház</h2>
         <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          
         </div>
         <form action="{{URL('/searchResult')}}" method="GET" role="search">
             {{ csrf_field() }}
@@ -26,44 +24,15 @@
                 </span>
             </div>
           </form>
-
+          <a href="#" class="list-group-item">Évszak</a>
+          <a href="#" class="list-group-item">Méret</a>
+          <a href="#" class="list-group-item">Ár</a>
       </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-        
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-        
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          
-          <div class="carousel-inner" role="listbox">
-            @foreach($products as $product)
-            <div class="carousel-item active">
-            
-              <img class="d-block img-fluid" src="{{ $product->image_url }}" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="{{ $product->image_url }}" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="{{ $product->image_url }}" alt="Third slide">
-            </div>
-          @endforeach
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          
-        </div>
+        <h2 style="text-align:center;">Kiemelt termékek</h2>
+       
 
         <div class="row">
         @foreach($products as $product)
@@ -79,12 +48,12 @@
               </div>   
                         
             </div>   
-            <form action="/cart" method="POST">
+            <form action="/cart" method="POST" >
                 {{ csrf_field() }}
               <input type="hidden" name="identifier" value=" {{ $product->identifier }} ">
               <input type="hidden" name="name" value=" {{ $product->name }} ">
               <input type="hidden" name="net_price" value=" {{ $product->net_price }} ">
-              <button class="btn btn-primary">Kosárba helyezem</button>          
+              <button class="btn btn-danger" >Kosárba helyezem</button>          
           </div>
         @endforeach
         

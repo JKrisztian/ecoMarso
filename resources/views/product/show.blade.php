@@ -8,11 +8,9 @@
     <div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4">Shop Name</h1>
+        <h2 class="my-4">Gumi webáruház</h2>
         <div class="list-group">
-          <a href="#" class="list-group-item active">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          
         </div>
         <form action="{{URL('/searchResult')}}" method="GET" role="search">
             {{ csrf_field() }}
@@ -23,8 +21,11 @@
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
-            </div>
+          </div>
           </form>
+          <a href="#" class="list-group-item">Évszak</a>
+          <a href="#" class="list-group-item">Méret</a>
+          <a href="#" class="list-group-item">Ár</a>
       </div>
       <!-- /.col-lg-3 -->
       
@@ -42,8 +43,7 @@
             <input type="hidden" name="identifier" value=" {{ $product->identifier }} ">
             <input type="hidden" name="name" value=" {{ $product->name }} ">
             <input type="hidden" name="net_price" value=" {{ $product->net_price }} ">
-            <button class="btn btn-primary">Kosárba helyezem</button>
-            <a href="" class="btn btn-primary">Add hozzá</a>
+            <button class="btn btn-danger">Kosárba helyezem</button>
         </form>
         @endforeach
           </div>

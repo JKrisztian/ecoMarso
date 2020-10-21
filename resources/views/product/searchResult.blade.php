@@ -9,11 +9,9 @@
 
     <div class="col-lg-3">
 
-      <h1 class="my-4">Shop Name</h1>
-      <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
+        <h2 class="my-4">Gumi webáruház</h2>
+        <div class="list-group">
+        
 
         <form action="{{URL('/searchResult')}}" method="GET" role="search">
             {{ csrf_field() }}
@@ -26,7 +24,9 @@
                 </span>
             </div>
         </form>
-
+          <a href="#" class="list-group-item">Évszak</a>
+          <a href="#" class="list-group-item">Méret</a>
+          <a href="#" class="list-group-item">Ár</a>
       </div>
 
     </div>

@@ -27,7 +27,7 @@ class Product extends Controller
     public function search_p()
     {
         $key = \Request::get('keres');
-        $products = DB::table('products')->where('name', 'LIKE' ,'%'. $key .'%')->orderBy('identifier')->paginate(6);
+        $products = DB::table('products')->where('name', 'LIKE' ,'%'. $key .'%')->orderBy('identifier')->paginate(12);
         return view('product.searchResult')->with('products', $products);
     }
 }

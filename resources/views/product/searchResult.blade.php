@@ -60,7 +60,7 @@
         </div>
         
         @endforeach
-        <div>{{ $products->render("pagination::bootstrap-4") }}</div>
+        <div>{{ $products->appends(Request::all())->render("pagination::bootstrap-4") }}</div>
       </div>
       <!-- /.row -->
      

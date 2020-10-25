@@ -177,7 +177,7 @@
 
         <div class="row">
 
-          @foreach($products as $key=>$data)
+          @foreach($sum as $key=>$data)
 
           <div class="col-lg-4 col-md-6 mb-4">          
             <div class="card h-100">
@@ -200,7 +200,7 @@
           </div>
           
           @endforeach
-          <div>{{ $products->render("pagination::bootstrap-4") }}</div>
+          <div>{{ $sum->appends(Request::all())->render("pagination::bootstrap-4") }}</div>
         </div>
         <!-- /.row -->
        

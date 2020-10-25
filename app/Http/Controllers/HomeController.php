@@ -10,7 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $brand = DB::table('products')->orderBy('short_name')->get()->unique('short_name');
+
         $products = DB::table('products')->inRandomOrder()->take(3)->get();
-        return view('home')->with('products', $products);
+        return view('home',compact(['products','brand']));
     }
 }

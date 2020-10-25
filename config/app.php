@@ -227,6 +227,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => 'Melihovv\ShoppingCart\Facades\ShoppingCart',
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 

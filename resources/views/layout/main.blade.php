@@ -15,7 +15,9 @@
     <body style="padding-top:56px;">
 
     @include('nav')
+    
     @yield('content')
+    
     @include('footer')
     
     <!-- Bootstrap core JavaScript -->

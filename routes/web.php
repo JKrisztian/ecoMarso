@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Product;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\FilterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,14 @@ use App\Http\Controllers\CartController;
 Route::get('/',[HomeController::class, 'index']);
 
 Route::get('/products',[Product::class, 'index']);
+
 Route::get('/searchResult',[Product::class, 'search_p']);
 Route::get('/products/{identifier}',[Product::class, 'show']);
 
 Route::get('/cart',[CartController::class, 'index']);
 Route::post('/cart',[CartController::class, 'store']);
+
+Route::get('/filterResult',[FilterController::class, 'filter_p']);
+
 
 
